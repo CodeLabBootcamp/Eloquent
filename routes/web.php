@@ -19,5 +19,7 @@ Route::get('/students','StudentController@getAll');
 Route::get('/students/add','StudentController@getAddForm');
 Route::post('/students/add','StudentController@addStudent');
 Route::get('/students/restore/{id}','StudentController@restoreStudent');
-
+Route::get('/teachers/{teacher}','TeacherController@viewTeacher');
 Route::get('/students/delete/{student}','StudentController@deleteStudent');
+Route::post('/teachers/{id}/addStudent','TeacherController@addStudent');
+Route::get('levels','LevelController@getLevels');

@@ -4,28 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Level;
 use App\Student;
+use App\Teacher;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     public function getAll(){
     	$students = Student::all();
+        $teachers = Teacher::all();
 
-    	$students = Student::find(1);
-    	dd($students->level->students);
-
-
-    	return view('students.all',compact('students'));
+    	return view('students.all',compact('students','teachers'));
     }
 
     public function getAddForm(){
 
-    	$student = Student::find(2);
-    	$teachers = $student->teachers->where('name','like','%' . 'a' . '%');
-dd($teachers);
-	    $level = Level::find(2);
-    	$student->level_id = $level->id;
-	    $student->save();
+
 
     	return view('students.add');
     }

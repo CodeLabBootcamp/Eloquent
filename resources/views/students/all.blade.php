@@ -31,5 +31,26 @@
 
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <table class="table-bordered table-responsive">
+                <thead>
+                <th>ID</th>
+                <th>Name</th>
+                </thead>
+
+                <tbody>
+                @foreach($teachers as $teacher)
+                    <tr>
+                        <td>{{$teacher->id}}</td>
+                        <td>{{$teacher->name}}</td>
+                     </tr>
+                @endforeach
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
 </div>
     @endsection
